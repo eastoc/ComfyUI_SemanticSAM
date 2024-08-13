@@ -20,7 +20,7 @@ git clone https://github.com/johnnynunez/detectron2
 or you can try other 3rd detectron2 implementation.
 
 ### 2. Download models
-download Semantic-SAM model to ComfyUI_SemanticSAM/ckpt
+download Semantic-SAM model to "ComfyUI_SemanticSAM/ckpt"
 <table><tbody>
 <!-- START TABLE -->
 <!-- TABLE HEADER -->
@@ -69,5 +69,5 @@ sh make.sh
 
 ## Workflow
 
-one-click segment workflow is in [./workflow/workflow.json](./workflow/workflow.json)
+one-click segment workflow is in ["./workflow/workflow.json"](./workflow/workflow.json)
 
