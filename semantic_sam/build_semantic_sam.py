@@ -12,12 +12,12 @@ from torchvision import transforms
 import torch
 import os
 
-from ComfyUI_Semantic_SAM.utils.arguments import load_opt_from_config_file
-from ComfyUI_Semantic_SAM.semantic_sam.BaseModel import BaseModel
-from ComfyUI_Semantic_SAM.semantic_sam import build_model
-from ComfyUI_Semantic_SAM.tasks.automatic_mask_generator import SemanticSamAutomaticMaskGenerator
-from ComfyUI_Semantic_SAM.tasks.interactive_idino_m2m_auto import show_anns
-from ComfyUI_Semantic_SAM.tasks.interactive_predictor import SemanticSAMPredictor
+from ComfyUI_SemanticSAM.utils.arguments import load_opt_from_config_file
+from ComfyUI_SemanticSAM.semantic_sam.BaseModel import BaseModel
+from ComfyUI_SemanticSAM.semantic_sam import build_model
+from ComfyUI_SemanticSAM.tasks.automatic_mask_generator import SemanticSamAutomaticMaskGenerator
+from ComfyUI_SemanticSAM.tasks.interactive_idino_m2m_auto import show_anns
+from ComfyUI_SemanticSAM.tasks.interactive_predictor import SemanticSAMPredictor
 
 
 def prepare_image(image_pth):
@@ -45,8 +45,8 @@ def build_semantic_sam(model_type, ckpt):
 
     current_path = os.getcwd()
     print("当前路径是:", current_path)
-    cfgs={'T':"custom_nodes/ComfyUI_Semantic_SAM/configs/semantic_sam_only_sa-1b_swinT.yaml",
-          'L':"custom_nodes/ComfyUI_Semantic_SAM/configs/semantic_sam_only_sa-1b_swinL.yaml"}
+    cfgs={'T':"custom_nodes/ComfyUI_SemanticSAM/configs/semantic_sam_only_sa-1b_swinT.yaml",
+          'L':"custom_nodes/ComfyUI_SemanticSAM/configs/semantic_sam_only_sa-1b_swinL.yaml"}
 
     sam_cfg=cfgs[model_type]
     opt = load_opt_from_config_file(sam_cfg)

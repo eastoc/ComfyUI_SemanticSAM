@@ -38,7 +38,7 @@ MODEL:
     AUTOGRESSIVE: True
   BACKBONE:
     NAME: swin
-    PRETRAINED: 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth'
+    PRETRAINED: 'custom_nodes/ComfyUI_SemanticSAM/ckpt/swin_tiny_patch4_window7_224.pth'
     LOAD_PRETRAINED: true
     SWIN:
       PRETRAIN_IMG_SIZE: 224

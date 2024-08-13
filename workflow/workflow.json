@@ -1,0 +1,239 @@
+{
+  "last_node_id": 21,
+  "last_link_id": 22,
+  "nodes": [
+    {
+      "id": 17,
+      "type": "LoadImage",
+      "pos": [
+        40,
+        302
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "truck.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "PreviewImage",
+      "pos": [
+        1405,
+        225
+      ],
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 19
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 20,
+      "type": "SemanticSAMLoader",
+      "pos": [
+        435.5874909756752,
+        49.649601025391036
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SemanticSAM_Model",
+          "type": "SemanticSAM_Model",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SemanticSAMLoader"
+      },
+      "widgets_values": [
+        "L"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "SemanticSAMSegment",
+      "pos": [
+        945,
+        224
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "SemanticSAM_Model",
+          "link": 21,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "points",
+          "type": "POINTS",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SemanticSAMSegment"
+      },
+      "widgets_values": [
+        0,
+        0.5,
+        6
+      ]
+    },
+    {
+      "id": 21,
+      "type": "PointPrompt",
+      "pos": [
+        422,
+        400
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "POINTS",
+          "type": "POINTS",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PointPrompt"
+      },
+      "widgets_values": [
+        375,
+        500
+      ]
+    }
+  ],
+  "links": [
+    [
+      18,
+      17,
+      0,
+      16,
+      1,
+      "IMAGE"
+    ],
+    [
+      19,
+      16,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      20,
+      0,
+      16,
+      0,
+      "SemanticSAM_Model"
+    ],
+    [
+      22,
+      21,
+      0,
+      16,
+      2,
+      "POINTS"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": {
+        "0": 75.92159993341575,
+        "1": 162.98676261097265
+      }
+    }
+  },
+  "version": 0.4
+}

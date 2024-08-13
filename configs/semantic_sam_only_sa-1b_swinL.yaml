@@ -38,7 +38,7 @@ MODEL:
     AUTOGRESSIVE: True
   BACKBONE:
     NAME: swin
-    PRETRAINED: 'custom_nodes/ComfyUI_Semantic_SAM/ckpt/swin_large_patch4_window12_384_22k.pth'
+    PRETRAINED: 'custom_nodes/ComfyUI_SemanticSAM/ckpt/swin_large_patch4_window12_384_22k.pth'
     LOAD_PRETRAINED: true
     SWIN:
       PRETRAIN_IMG_SIZE: 384

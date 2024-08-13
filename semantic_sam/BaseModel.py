@@ -4,7 +4,7 @@ import logging
 import torch
 import torch.nn as nn
 
-from ComfyUI_Semantic_SAM.utils.model import align_and_update_state_dicts
+from ComfyUI_SemanticSAM.utils.model import align_and_update_state_dicts
 
 logger = logging.getLogger(__name__)
 

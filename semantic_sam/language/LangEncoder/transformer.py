@@ -12,7 +12,7 @@ from timm.models.layers import DropPath, trunc_normal_
 
 from .registry import register_lang_encoder
 from detectron2.utils.comm import is_main_process
-from ComfyUI_Semantic_SAM.utils.model import register_norm_module
+from ComfyUI_SemanticSAM.utils.model import register_norm_module
 
 logger = logging.getLogger(__name__)
 

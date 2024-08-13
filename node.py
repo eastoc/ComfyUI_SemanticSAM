@@ -10,8 +10,8 @@ import logging
 import cv2
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-sam_model_list = {"L": {"model_url": "custom_nodes/ComfyUI_Semantic_SAM/ckpt/swinl_only_sam_many2many.pth"}, 
-                  "T": {"model_url": "custom_nodes/ComfyUI_Semantic_SAM/ckpt/swint_only_sam_many2many.pth"}}
+sam_model_list = {"L": {"model_url": "custom_nodes/ComfyUI_SemanticSAM/ckpt/swinl_only_sam_many2many.pth"}, 
+                  "T": {"model_url": "custom_nodes/ComfyUI_SemanticSAM/ckpt/swint_only_sam_many2many.pth"}}
 
 def list_sam_model():
     return list(sam_model_list.keys())
@@ -51,7 +51,7 @@ class PointPrompt():
     FUNCTION = "main"
     
     def main(self,  x_coord, y_coord):
-        return ([[x_coord,x_coord]],)
+        return ([[x_coord,y_coord]],)
     
 class SemanticSAMLoader():
     @classmethod
