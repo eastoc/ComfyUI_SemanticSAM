@@ -67,3 +67,7 @@ cd Mask2Former/mask2former/modeling/pixel_decoder/ops
 sh make.sh
 ```
 
+## Workflow
+
+one-click segment workflow is in [./workflow/workflow.json](./workflow/workflow.json)
+
